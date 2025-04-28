@@ -1,0 +1,14 @@
+CUDA_VISIBLE_DEVICES=1 python train-sd15.py \
+  --pretrained_model_name_or_path=stable-diffusion-v1-5/stable-diffusion-v1-5  \
+  --output_dir="mapo" \
+  --mixed_precision="fp16" \
+  --dataset_name=kashif/pickascore \
+  --train_batch_size=8 \
+  --gradient_accumulation_steps=32 \
+  --gradient_checkpointing \
+  --learning_rate=1e-5 \
+  --lr_scheduler="constant" \
+  --lr_warmup_steps=0 \
+  --max_train_steps=2000 \
+  --checkpointing_steps=500 \
+  --seed="0" 
